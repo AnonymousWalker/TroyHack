@@ -31,6 +31,13 @@ namespace TroyHack.Controllers
             return View();
         }
 
+        public string GetImage()
+        {
+            string imgAddress = "";
+            return imgAddress;
+        }
+
+
         //private HomeViewModel InitData()
         //{
         //    var postings = new List<PostViewModel>();

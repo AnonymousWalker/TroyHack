@@ -4,6 +4,7 @@
 }
 
 @Styles.Render("~/Content/custom/home.css")
+@Html.Hidden("LoadImgUrl", Html.ActionLink ("GetImage", "Home"))
 
 <div class="body-container container-fluid">
     <div class="row">
@@ -16,5 +17,8 @@
         }
  
     </div>
-
 </div>
+
+@section scripts {
+    @Scripts.Render("~/Scripts/custom/slideshow.js")
+}

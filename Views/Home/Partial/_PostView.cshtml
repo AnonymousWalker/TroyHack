@@ -4,10 +4,10 @@
 
         <div class="img-group col-sm-offset-1 col-sm-6">
             <div class="img-container">
-                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                <a class="prev" onclick="nextSlides(@Model.PostingId,)">&#10094;</a>
+                <a class="next" onclick="prevSlides(@Model.PostingId)">&#10095;</a>
 
-                <img src="@Model.Images.FirstOrDefault()" />
+                <img id="@Model.Images[1]" src="@Model.Images.FirstOrDefault().Value" />
             </div>
         </div>
 

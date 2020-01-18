@@ -10,10 +10,11 @@ namespace TroyHack.Models.ViewModel
     {
         public PostViewModel()
         {
-
+            Images = new Dictionary<int, string>();
         }
 
-        public IList<string> Images { get; set; }
+        public int PostingId { get; set; }
+        public IDictionary<int,string> Images { get; set; }
         public string Status = "";
         public string Story = "";
         public int Age { get; set; }
