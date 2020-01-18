@@ -1,0 +1,34 @@
+﻿@model PostViewModel
+<div class="post-section col-sm-offset-1 col-sm-10">
+    <div class="post-container row">
+
+        <div class="img-group col-sm-offset-1 col-sm-6">
+            <div class="img-container">
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+                <img src="@Model.Images.FirstOrDefault()" />
+            </div>
+        </div>
+
+        <div class="detail-group col-md-4">
+            <div class="row-flex">
+                <div class="first-cell">
+                    <p>@Model.Status</p>
+                </div>
+                <div class="second-cell">
+                    <p>@Model.Story</p>
+                </div>
+                <div class="third-cell">
+                    <p>@Model.Age</p>
+                    <p>@Model.Breed</p>
+                    <p>@Model.SpecialNeeds</p>
+                    <p>@Model.Health</p>
+                </div>
+                <div class="fourth-cell">
+                    <p>@Model.Characteristic</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

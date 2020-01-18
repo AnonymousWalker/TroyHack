@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using TroyHack.Models;
 using TroyHack.Models.ViewModel;
 
 namespace TroyHack.Controllers
@@ -12,10 +13,8 @@ namespace TroyHack.Controllers
     {
         public ActionResult Index()
         {
-            List<string> images = new List<string>();
-            images.Add("/Content/img/cat.jpg");
-            PostViewModel vm = new PostViewModel { Images = images };
-            return View(vm);
+            var model = TroyHack.MvcApplication.AllPostings;
+            return View(new HomeViewModel { Posts = model});
         }
 
         public ActionResult About()
@@ -31,5 +30,38 @@ namespace TroyHack.Controllers
 
             return View();
         }
+
+        //private HomeViewModel InitData()
+        //{
+        //    var postings = new List<PostViewModel>();
+
+        //    postings.Add(new PostViewModel
+        //    {
+        //        Age = 2, 
+        //        Breed = "Domestic Shorthair",
+        //        Characteristic = "Cuddle & Child friendly",
+        //        Health = "Good",
+        //        SpecialNeeds = "Wet food only",
+        //        Images = new List<string>(){ @"/Content/img/yoko-cat.png" },
+        //        Status = "Emergency",
+        //        Story = "Yoko is a loving 2-year-old girl who was found behind the dumpster of a restaurant. She has been in the shelter for 3 months now and loves to cuddle everyone she meets! Yoko is ready for a forever person to snuggle with."
+
+        //    });
+
+        //    postings.Add(new PostViewModel
+        //    {
+        //        Age = 110,
+        //        Breed = "Test",
+        //        Characteristic = "Test",
+        //        Health = "Test",
+        //        SpecialNeeds = "Test",
+        //        Images = new List<string>() { @"/Content/img/cat.jpg" },
+        //        Status = "Test",
+        //        Story = "TestTestTestTestTest"
+
+        //    });
+
+        //    return new HomeViewModel { Posts = postings };
+        //}
     }
 }

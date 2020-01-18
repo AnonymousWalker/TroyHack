@@ -72,7 +72,6 @@ D:\TroyHack\bin\System.Web.WebPages.Razor.xml
 D:\TroyHack\bin\Newtonsoft.Json.xml
 D:\TroyHack\bin\Antlr3.Runtime.pdb
 D:\TroyHack\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-D:\TroyHack\obj\Debug\TroyHack.csprojAssemblyReference.cache
 D:\TroyHack\obj\Debug\TroyHack.csproj.CopyComplete
 D:\TroyHack\obj\Debug\TroyHack.dll
 D:\TroyHack\obj\Debug\TroyHack.pdb
