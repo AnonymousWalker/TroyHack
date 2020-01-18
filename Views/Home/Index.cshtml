@@ -1,4 +1,4 @@
-﻿@model HomeViewModel
+﻿@model TroyHack.Models.ViewModel.PostViewModel
 @{
     ViewBag.Title = "Home4Pet";
 }
@@ -33,8 +33,6 @@
 
     .left-nav-bar {
         height: 100%;
-        width: 100px;
-        position: fixed;
         background-color: cornflowerblue;
     }
 
@@ -54,14 +52,37 @@
 
 <div class="body-container container-fluid">
     <div class="row" style="height:100%;">
-        <div class="left-nav-bar">
-            <p>Nav</p>
+        <div class="left-nav-bar col-sm-1">
         </div>
-        @foreach (var post in Model.Posts)
-        {
-            Html.RenderPartial("Partial/_PostView", post);
-        }
 
+        <div class="post-area col-sm-10">
+            <div class="post-container row">
+                <div class="main-img-group col-sm-8">
+                    <div class="img-container">
+                        <img src="@Model.Images.FirstOrDefault()" />
+                    </div>
+                </div>
+
+                <div class="detail-group col-md-4">
+                    <div class="row-flex">
+                        <div class="first-cell">
+                            <p>Emergency</p>
+                        </div>
+                        <div class="second-cell">
+                            <p>Story</p>
+                        </div>
+                        <div class="third-cell">
+                            <p>Detailed info</p>
+                        </div>
+                        <div class="fourth-cell">
+                            <p>Characteristic</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
     </div>
 
 </div>
