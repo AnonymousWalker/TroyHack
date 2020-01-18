@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using TroyHack.Models.ViewModel;
 
 namespace TroyHack.Controllers
 {
@@ -10,7 +12,10 @@ namespace TroyHack.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            List<string> images = new List<string>();
+            images.Add(@"D:\TroyHack\Content\img\cat.jpg");
+            PostViewModel vm = new PostViewModel { Images = images };
+            return View(vm);
         }
 
         public ActionResult About()
