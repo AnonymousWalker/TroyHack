@@ -13,7 +13,7 @@ namespace TroyHack.Controllers
         public ActionResult Index()
         {
             List<string> images = new List<string>();
-            images.Add(@"D:\TroyHack\Content\img\cat.jpg");
+            images.Add("/Content/img/cat.jpg");
             PostViewModel vm = new PostViewModel { Images = images };
             return View(vm);
         }
