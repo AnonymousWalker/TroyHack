@@ -1,0 +1,86 @@
+﻿@{
+    ViewBag.Title = "Home4Pet";
+}
+
+<style>
+    .body-container {
+        margin:15px;
+        height: 100%;
+        background-color: #d9d4d4;
+    }
+
+    .col-flex {
+        display: flex;
+    }
+
+    .col-flex::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    .row-flex {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .row-flex::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    .left-nav-bar{
+        width: 10%;
+        background-color:cornflowerblue;
+    }
+
+    .main-img {
+        padding: 20px;
+        width: 60%;
+    }
+
+    .main-img img {
+        width:100%;
+        height:100%; 
+    }
+</style>
+
+<div class="body-container row">
+    <div class="left-nav-bar col-sm-1">
+    </div>
+
+    <div class="post-area col-sm-10">
+        <div class="post-container row">
+            <div class="main-img col-sm-6">
+                <div class="img-container">
+                    <img src="~/Content/img/cat.jpg" />
+                </div>
+            </div>
+
+            <div class="right-detail col-md-4 row-flex">
+                <div class="first-cell">Emergency</div>
+                <div class="second-cell">Story</div>
+                <div class="third-cell">Detailed info</div>
+                <div class="fourth-cell">Characteristic</div>
+            </div>
+        </div>
+
+        <div class="post-container row">
+            <div class="main-img col-sm-6">
+                <div class="img-container">
+                    <img src="~/Content/img/cat.jpg" />
+                </div>
+            </div>
+
+            <div class="right-detail col-md-4 row-flex">
+                <div class="first-cell">Emergency</div>
+                <div class="second-cell">Story</div>
+                <div class="third-cell">Detailed info</div>
+                <div class="fourth-cell">Characteristic</div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
