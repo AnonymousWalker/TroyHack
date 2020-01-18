@@ -1,23 +1,26 @@
-﻿function prevSlides(pid) {
-    loadPicture(pid, false);
+﻿function prevSlides(pid, selector) {
+    var imgIndex = $(selector).siblings('img').attr('data-imgId');
+    loadPicture(pid, imgIndex);
 }
 
-function nextSlide(pid) {
+function nextSlide(pid, selector) {
     loadPicture(id, true);
 }
 
-function loadPicture(postingId, isNext) {
+function loadPicture(postingId, imgIndex) {
     var urlStr = $("#LoadImgUrl").val();
     
     $.ajax({
         url: urlStr,
         type: "get",
         data: {
-            postingId, picId
+            postingId, imgIndex
             
-        }
+        },
         success: function (res) {
-
+            if (!res == "") {
+                
+            }
         }
     });
 }

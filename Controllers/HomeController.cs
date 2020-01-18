@@ -31,9 +31,13 @@ namespace TroyHack.Controllers
             return View();
         }
 
-        public string GetImage()
+        public string GetImage(int postingId, int imgIndex)
         {
             string imgAddress = "";
+            var posting = TroyHack.MvcApplication.AllPostings.FirstOrDefault(p => p.PostingId == postingId);
+            if (posting == null) 
+                return imgAddress;
+            imgAddress = posting.Images[imgIndex];
             return imgAddress;
         }
 
