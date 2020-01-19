@@ -75,3 +75,4 @@ D:\TroyHack\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 D:\TroyHack\obj\Debug\TroyHack.csproj.CopyComplete
 D:\TroyHack\obj\Debug\TroyHack.dll
 D:\TroyHack\obj\Debug\TroyHack.pdb
+D:\TroyHack\obj\Debug\TroyHack.csprojAssemblyReference.cache

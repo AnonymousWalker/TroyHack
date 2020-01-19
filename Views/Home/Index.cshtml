@@ -4,10 +4,30 @@
 }
 
 @Styles.Render("~/Content/custom/home.css")
+@Html.Hidden("LoadImgUrl", Url.Action("GetImage", "Home"))
 
 <div class="body-container container-fluid">
     <div class="row">
         <div class="left-nav-bar col-sm-1">
+            <div class="row-flex">
+                <div class="user-img-section">
+
+                </div>
+                <div class="icon-section">
+                    <div>
+                        <img src="~/Content/icons/user.png" />
+                        <label>Profile</label>
+                    </div>
+                    <div>
+                        <img src="~/Content/icons/setting.png" />
+                        <label>Profile</label>
+                    </div>
+                    <div>
+                        <a href="@Url.Action("PostAPet","Home")"><img src="~/Content/icons/paw.png" /></a>
+                        <label>Post Now</label>
+                    </div>
+                </div>
+            </div>
         </div>
 
         @foreach (var post in Model.Posts)
@@ -16,5 +36,8 @@
         }
  
     </div>
-
 </div>
+
+@section scripts {
+    @Scripts.Render("~/Scripts/custom/slideshow.js")
+}

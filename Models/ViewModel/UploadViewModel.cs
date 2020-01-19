@@ -2,19 +2,18 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using System.Drawing;
 
 namespace TroyHack.Models.ViewModel
 {
-    public class PostViewModel
+    public class UploadViewModel
     {
-        public PostViewModel()
+        public UploadViewModel()
         {
             Images = new Dictionary<int, string>();
         }
 
         public int PostingId { get; set; }
-        public IDictionary<int,string> Images { get; set; }
+        public IDictionary<int, string> Images { get; set; }
         public string Status = "";
         public string Story = "";
         public int Age { get; set; }
@@ -22,6 +21,5 @@ namespace TroyHack.Models.ViewModel
         public string SpecialNeeds = "";
         public string Health = "";
         public string Characteristic = "";
-        public IDictionary<int, byte[]> ImageFiles { get; set; }
     }
 }
