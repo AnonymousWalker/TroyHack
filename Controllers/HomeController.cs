@@ -13,8 +13,8 @@ namespace TroyHack.Controllers
     {
         public ActionResult Index()
         {
-            var model = TroyHack.MvcApplication.AllPostings;
-            return View(new HomeViewModel { Posts = model});
+            var models = TroyHack.MvcApplication.AllPostings;
+            return View(new HomeViewModel { Posts = models});
         }
 
         public ActionResult About()
@@ -78,6 +78,16 @@ namespace TroyHack.Controllers
 
             }
             return imgAddress;
+        }
+
+        public ActionResult Search(string searchInput = "")
+        {
+            if (searchInput != "")
+            {
+                var res = TroyHack.MvcApplication.AllPostings.Where(p => p.Breed.Contains(searchInput) || p.Characteristic.Contains(searchInput) || p.Status.Contains(searchInput));
+                return View("Index", new HomeViewModel { Posts = res.ToList() });
+            }
+            return RedirectToAction("Index");
         }
 
 

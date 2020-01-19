@@ -22,6 +22,13 @@
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
+                    <li>
+                        @using (Html.BeginForm("Search", "Home", FormMethod.Get))
+                        {
+                            <span class="glyphicon glyphicon-search" style="margin:auto;position:absolute;right:5px;top:15px;"></span>
+                            @Html.TextBox("searchInput", "", new { @class = "form-control", placeholder="Find by features", style = "margin: 8px;height: 80%; " })
+                        }
+                    </li>
                 </ul>
             </div>
         </div>
@@ -30,8 +37,8 @@
         @RenderBody()
         <hr />
         @*<footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>*@
+                <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            </footer>*@
     </div>
 
     @Scripts.Render("~/bundles/jquery")
