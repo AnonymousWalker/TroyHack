@@ -21,9 +21,24 @@ a:hover, a:focus {
 .left-nav-bar {
     height: 100%;
     min-width: 50px;
+    max-width: 10%;
     position: fixed;
     left: 0;
+    z-index: 10;
     background-color: cornflowerblue;
+}
+
+.icon-section img {
+    cursor: pointer;
+    margin: auto;
+    height: 100%;
+    width: 100%;
+    min-width: 35px;
+}
+
+.icon-section div {
+    margin-bottom: 10px;
+    text-align: center;
 }
 
 .post-section {
@@ -61,6 +76,7 @@ a:hover, a:focus {
     font-weight: bold;
     font-size: 18px;
     transition: 0.6s ease;
+    z-index: 10;
 }
 
     .prev:hover, .next:hover {

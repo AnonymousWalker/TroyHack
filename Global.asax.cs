@@ -27,7 +27,8 @@ namespace TroyHack
             AllPostings = new List<PostViewModel>();
 
             var img = new Dictionary<int, string>();
-            img.Add(1, @"/Content/img/cat.jpg");
+            img.Add(1, @"/Content/img/yoko-cat.png");
+            img.Add(2, @"/Content/img/wildcat.jpg");
             AllPostings.Add(new PostViewModel
             {
                 PostingId = 1,
@@ -43,7 +44,7 @@ namespace TroyHack
             });
 
             img = new Dictionary<int, string>();
-            img.Add(1, @"/Content/img/yoko-cat.png");
+            img.Add(1, @"/Content/img/cat.jpg");
             AllPostings.Add(new PostViewModel
             {
                 PostingId = 2,

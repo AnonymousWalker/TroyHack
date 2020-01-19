@@ -1,0 +1,43 @@
+﻿@model UploadViewModel
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>PostAPet</title>
+    @Styles.Render("~/Content/custom/create_post.css")
+</head>
+
+<body>
+    <div class="container-fluid mh-100">
+        <div class="row mh-100">
+            <h1 id="title">Post A Pet, Save A Friend</h1><hr>
+            <div class="mh-100 col-md-6 text-left left">
+                <form id="pic-form" onclick="document.getElementById('profile-pic').click();">
+                    <legend id="select-photo">
+                        Select Photo
+                    </legend>
+                    <div id="pic-preview">
+                        <img src="/Content/img/yoko-cat.png" alt="" />
+                    </div>
+                    <input id="profile-pic" name="profilePic" type="file" title="">
+                </form>
+            </div>
+            <div class="col-md-6 text-right" id="submit-form">
+                @using (Html.BeginForm(null, null, FormMethod.Post))
+                {
+                    <input class="input-form" type="text" placeholder="Status (*)" required>
+                    <input class="input-form" type="number" placeholder="Age (*)" required>
+                    <input class="input-form" type="text" placeholder="Breed">
+                    <input class="input-form" type="text" placeholder="Special Needs">
+                    <input class="input-form" type="text" placeholder="Health(*)" required>
+                    <input class="input-form" type="text" placeholder="Characteristics" >
+                    <button type="submit" class="input-form btn-success">Submit</button>
+                }
+            </div>
+            <a href="_index_.html"></a>
+        </div>
+    </div>
+</body>
+</html>

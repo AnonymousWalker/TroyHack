@@ -24,20 +24,41 @@ namespace TroyHack.Controllers
             return View();
         }
 
-        public ActionResult Contact()
+        public ActionResult PostAPet()
         {
-            ViewBag.Message = "Your contact page.";
-
             return View();
         }
 
+        [HttpPost]
+        public ActionResult PostAPet(UploadViewModel model)
+        {
+            var posting = new PostViewModel {
+                Age = model.Age,
+                Breed = model.Breed,
+                Characteristic = model.Characteristic,
+                Health = model.Health,
+                Images = model.Images,
+                PostingId = model.PostingId,
+                SpecialNeeds = model.SpecialNeeds,
+                Status = model.Status,
+                Story = model.Story
+            };
+
+            TroyHack.MvcApplication.AllPostings.Add(posting);
+            return RedirectToAction("Index");
+        }
         public string GetImage(int postingId, int imgIndex)
         {
             string imgAddress = "";
-            var posting = TroyHack.MvcApplication.AllPostings.FirstOrDefault(p => p.PostingId == postingId);
-            if (posting == null) 
-                return imgAddress;
-            imgAddress = posting.Images[imgIndex];
+            try
+            {
+                var posting = TroyHack.MvcApplication.AllPostings.FirstOrDefault(p => p.PostingId == postingId);
+                imgAddress = posting.Images[imgIndex];
+            }
+            catch (Exception e)
+            {
+
+            }
             return imgAddress;
         }
 

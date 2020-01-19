@@ -1,13 +1,16 @@
 ﻿function prevSlides(pid, selector) {
-    var imgIndex = $(selector).siblings('img').attr('data-imgId');
-    loadPicture(pid, imgIndex);
+    var $elem = $(selector).siblings('img');
+    var imgIndex = $elem.attr('data-imgId');
+    loadPicture(pid, parseInt(imgIndex)- 1, $elem);
 }
 
-function nextSlide(pid, selector) {
-    loadPicture(id, true);
+function nextSlides(pid, selector) {
+    var $elem = $(selector).siblings('img');
+    var imgIndex = $elem.attr('data-imgId');
+    loadPicture(pid, parseInt(imgIndex) + 1, $elem);
 }
 
-function loadPicture(postingId, imgIndex) {
+function loadPicture(postingId, imgIndex, $elem) {
     var urlStr = $("#LoadImgUrl").val();
     
     $.ajax({
@@ -19,7 +22,8 @@ function loadPicture(postingId, imgIndex) {
         },
         success: function (res) {
             if (!res == "") {
-                
+                $elem.attr("src", res);
+                $elem.attr('data-imgId', imgIndex);
             }
         }
     });
