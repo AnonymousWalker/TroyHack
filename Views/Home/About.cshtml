@@ -1,7 +1,31 @@
-﻿@{
-    ViewBag.Title = "About";
-}
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
-
-<p>Use this area to provide additional information.</p>
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>About Us</title>
+    @Styles.Render("~/Content/custom/about.css")
+</head>
+<body>
+    <div class="container-fluid">
+        <div id="wrap">
+            <legend><h2 id="title">About</h2></legend>
+            <div class="row about-us">
+                <div class="col-md-4">
+                    <h3>Welcome to our website!</h3> <p>
+                        We want to first of all thank you for hosting this Troy Hackathon. It has been a fun time working on this project. Much like many of the other projects, our work would not be finished had we had more time to work on this, but that is not necessarily a bad thing. It allows us to see how much we can accomplish when on a time crunch.
+                    </p>
+                </div>
+                <div class="col-md-4">
+                    <h3>What is the Problem?</h3> <p>
+                        We all agreed that animal adoption can sometimes require a lot of time and patience. It requires patience for the potential owners that want to find animals to adopt, and it requires a lot of patience on the shelters as well because of the inability to promote the animals in dire need of owners. Owners will often have to look through various sites to find the pet they are looking for. Likewise, the expenditure of time often leads to animals in shelters being put down due to overcrowding and no one knowing about the animal during the heart-breaking countdown to them being put down.
+                    </p>
+                </div>
+                <div class="col-md-4">
+                    <h3>Our Project</h3> <p>
+                        We collectively decided to create a website that displays the animals in every shelter around the world as well as posts of animals from individuals who are unable to take care of them. Obviously, displaying every shelter's location would require a lot of time and effort, so we decided not to implement this into our site for time's sake. We decided to only display the essential parts that constitute our idea. On our site is a facebook-like interface that allows the user to scroll through different animal posts. All essential information regarding that animal is given as well as a picture which is often not included in many other sites. Animals that will soon have to be put down will be put on the high priority list, and those posts will be displayed first.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

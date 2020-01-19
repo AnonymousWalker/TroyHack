@@ -1,0 +1,35 @@
+body{
+	height: 100%;
+	margin-top: 60px;
+	padding: 0;
+}
+body{
+	background-image: url("images/bg-blur.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+#title{
+	text-align: center;
+}
+.about-us{
+	padding: 25px;
+	height: 100%;
+	border-radius: 20px;
+	margin: 100px;
+	margin-top: 50px;
+	border: 5px solid rgba(0, 0, 0, 0.3);
+	z-index: 1;
+}
+.about-us h3{
+	text-align: left;
+} p{
+	text-indent: 25px;
+	text-align: justify;
+}
+#wrap{
+	margin: 5px;
+	border:	5px solid rgba(0,0,0,0.3);
+}
+legend{
+	border: transparent;
+}
