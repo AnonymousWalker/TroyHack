@@ -6,7 +6,7 @@
             <div class="img-container">
                 <a class="prev" onclick="prevSlides(@Model.PostingId, this)">&#10094;</a>
                 <a class="next" onclick="nextSlides(@Model.PostingId, this)">&#10095;</a>
-                <img id ="image" data-postingId="@Model.PostingId" data-imgId="1" src="@Model.Images.FirstOrDefault().Value" />
+                <img id="image" data-postingId="@Model.PostingId" data-imgId="1" src="@Model.Images.FirstOrDefault().Value" />
             </div>
         </div>
 
@@ -20,14 +20,29 @@
                 </div>
                 <div class="third-cell content-3">
                     <p>I am @Model.Age year(s) old</p>
-                    <p>My parents: @Model.Breed</p>
-                    <p>Special demand: @Model.SpecialNeeds</p>
-                    <p>@Model.Health</p>
-                </div>
-                <div class="fourth-cell content-4">
-                    <p>@Model.Characteristic</p>
-                </div>
+                    <p>
+                        @if (Model.Breed != null && Model.Breed == "")
+                        {
+                            @("My parents: " + Model.Breed)
+                        }
+                    </p>
+                    <p>
+                        @if (Model.SpecialNeeds != null && Model.SpecialNeeds!= "")
+                        {
+                            @("Special demand: " + Model.SpecialNeeds)
+                        }
+                </p>
+                <p>Health & Vaccination: @Model.Health</p>
+            </div>
+            <div class="fourth-cell content-4">
+                <p>
+                    @if (Model.Characteristic != null && Model.Characteristic != "")
+                    {
+                        @("Characteristics: " + Model.Characteristic)
+                    }
+                </p>
             </div>
         </div>
     </div>
+</div>
 </div>

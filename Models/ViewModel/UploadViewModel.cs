@@ -14,12 +14,12 @@ namespace TroyHack.Models.ViewModel
 
         public int PostingId { get; set; }
         public IDictionary<int, string> Images { get; set; }
-        public string Status = "";
-        public string Story = "";
+        public string Status { get; set; } = "";
+        public string Story { get; set; } = "";
         public int Age { get; set; }
-        public string Breed = "";
-        public string SpecialNeeds = "";
-        public string Health = "";
-        public string Characteristic = "";
+        public string Breed { get; set; } = "";
+        public string SpecialNeeds { get; set; } = "";
+        public string Health { get; set; } = "";
+        public string Characteristic { get; set; } = "";
     }
 }
