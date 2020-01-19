@@ -30,22 +30,36 @@ namespace TroyHack.Controllers
         }
 
         [HttpPost]
-        public ActionResult PostAPet(UploadViewModel model)
+        public ActionResult PostAPet(UploadViewModel model, HttpPostedFileBase images = null)
         {
-            var posting = new PostViewModel {
-                Age = model.Age,
-                Breed = model.Breed,
-                Characteristic = model.Characteristic,
-                Health = model.Health,
-                Images = model.Images,
-                PostingId = model.PostingId,
-                SpecialNeeds = model.SpecialNeeds,
-                Status = model.Status,
-                Story = model.Story
-            };
+            if (model != null && images != null)
+            {
+                var imgBin = new byte[images.ContentLength];
+                images.InputStream.Read(imgBin, 0, images.ContentLength);
+                var base64Img = Convert.ToBase64String(imgBin);
+                var imageFileString = string.Format("data:image/jpg;base64,{0}", base64Img);
 
-            TroyHack.MvcApplication.AllPostings.Add(posting);
-            return RedirectToAction("Index");
+                var imgList = new Dictionary<int, string>();
+                imgList.Add(1, imageFileString);
+
+                var posting = new PostViewModel
+                {
+                    Age = model.Age,
+                    Breed = model.Breed,
+                    Characteristic = model.Characteristic,
+                    Health = model.Health,
+                    Images = imgList,
+                    //ImageFiles = imgList,
+                    PostingId = model.PostingId,
+                    SpecialNeeds = model.SpecialNeeds,
+                    Status = model.Status,
+                    Story = model.Story
+                };
+
+                TroyHack.MvcApplication.AllPostings.Add(posting);
+                return RedirectToAction("Index");
+            }
+            return RedirectToAction("PostAPet");
         }
         public string GetImage(int postingId, int imgIndex)
         {

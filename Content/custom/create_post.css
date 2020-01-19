@@ -15,8 +15,8 @@ body {
 	z-index: 1;
 	min-height: 100%;
 }
-#profile-pic{
-	opacity: 0;
+#browse-pic{
+	display: none;
 }
 #pic-form{
 	z-index: 10;	
@@ -33,7 +33,7 @@ body {
 	filter: opacity(70%);
 }
 
-#pic-preview img {
+#pic-preview-wrapper img {
 	z-index: -1;
 	max-width: 100%;
 	max-height: 100%;

@@ -22,5 +22,6 @@ namespace TroyHack.Models.ViewModel
         public string SpecialNeeds = "";
         public string Health = "";
         public string Characteristic = "";
+        public IDictionary<int, byte[]> ImageFiles { get; set; }
     }
 }

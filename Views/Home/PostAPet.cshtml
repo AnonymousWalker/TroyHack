@@ -14,30 +14,33 @@
         <div class="row mh-100">
             <h1 id="title">Post A Pet, Save A Friend</h1><hr>
             <div class="mh-100 col-md-6 text-left left">
-                <form id="pic-form" onclick="document.getElementById('profile-pic').click();">
+                <div id="pic-form" onclick="document.getElementById('browse-pic').click();">
                     <legend id="select-photo">
                         Select Photo
                     </legend>
-                    <div id="pic-preview">
-                        <img src="/Content/img/yoko-cat.png" alt="" />
+                    <div id="pic-preview-wrapper">
+                        <img id="preview-img" src="#" alt="" />
                     </div>
-                    <input id="profile-pic" name="profilePic" type="file" title="">
-                </form>
+
+                </div>
             </div>
             <div class="col-md-6 text-right" id="submit-form">
-                @using (Html.BeginForm(null, null, FormMethod.Post))
+                @using (Html.BeginForm(null, null, FormMethod.Post, new { enctype = "multipart/form-data" }))
                 {
-                    <input class="input-form" type="text" placeholder="Status (*)" required>
-                    <input class="input-form" type="number" placeholder="Age (*)" required>
-                    <input class="input-form" type="text" placeholder="Breed">
-                    <input class="input-form" type="text" placeholder="Special Needs">
-                    <input class="input-form" type="text" placeholder="Health(*)" required>
-                    <input class="input-form" type="text" placeholder="Characteristics" >
+                    <input class="input-form" name="Status" type="text" placeholder="Status (*)" required>
+                    <input class="input-form" name="Age" type="number" placeholder="Age (*)" required>
+                    <input class="input-form" name="Breed" type="text" placeholder="Breed">
+                    <input class="input-form" name="SpecialNeed" type="text" placeholder="Special Needs">
+                    <input class="input-form" name="Health" type="text" placeholder="Vaccination(*)" required>
+                    <input class="input-form" name="Characteristics" type="text" placeholder="Characteristics">
+                    <input id="browse-pic" name="images" type="file" accept="image/*" title="" multiple>
                     <button type="submit" class="input-form btn-success">Submit</button>
                 }
             </div>
-            <a href="_index_.html"></a>
         </div>
     </div>
+    @section scripts{
+        <script src="~/Scripts/custom/upload.js"></script>
+    }
 </body>
 </html>
