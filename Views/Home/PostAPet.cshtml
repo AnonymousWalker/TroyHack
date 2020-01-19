@@ -25,16 +25,23 @@
                 </div>
             </div>
             <div class="col-md-6 text-right" id="submit-form">
-                @using (Html.BeginForm(null, null, FormMethod.Post, new { enctype = "multipart/form-data" }))
+                @using (Html.BeginForm("PostAPet", "Home", FormMethod.Post, new { id="form-upload",enctype = "multipart/form-data" }))
                 {
-                    <input class="input-form" name="Status" type="text" placeholder="Status (*)" required>
+                    @Html.TextBoxFor(x => x.Status, new { @class="input-form", placeholder = "Status (*)", required = "required" })
+                    @Html.TextBoxFor(x => x.Age, new { @class="input-form",placeholder = "Age (*)", required = "required" })
+                    @Html.TextBoxFor(x => x.Breed, new { @class="input-form",placeholder = "Breed" })
+                    @Html.TextBoxFor(x => x.SpecialNeeds, new { @class="input-form",placeholder = "Special Needs" })
+                    @Html.TextBoxFor(x => x.Health, new { @class="input-form",placeholder = "Vaccination (*)", required = "required" })
+                    @Html.TextBoxFor(x => x.Characteristic, new { @class="input-form",placeholder = "Characteristics" })
+                    @*<input class="input-form" name="Status" type="text" placeholder="Status (*)" required>
                     <input class="input-form" name="Age" type="number" placeholder="Age (*)" required>
                     <input class="input-form" name="Breed" type="text" placeholder="Breed">
                     <input class="input-form" name="SpecialNeed" type="text" placeholder="Special Needs">
                     <input class="input-form" name="Health" type="text" placeholder="Vaccination(*)" required>
-                    <input class="input-form" name="Characteristics" type="text" placeholder="Characteristics">
+                    <input class="input-form" name="Characteristics" type="text" placeholder="Characteristics">*@
                     <input id="browse-pic" name="images" type="file" accept="image/*" title="" multiple>
-                    <button type="submit" class="input-form btn-success">Submit</button>
+                    <button id="submit-btn" class="input-form btn-success">Submit</button>
+                    <input id="real-submit" type="submit" style="display:none" />
                 }
             </div>
         </div>
