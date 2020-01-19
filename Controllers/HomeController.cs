@@ -30,17 +30,22 @@ namespace TroyHack.Controllers
         }
 
         [HttpPost]
-        public ActionResult PostAPet(UploadViewModel model, HttpPostedFileBase images = null)
+        public ActionResult PostAPet(UploadViewModel model, HttpPostedFileBase[] images = null)
         {
             if (model != null && images != null)
             {
-                var imgBin = new byte[images.ContentLength];
-                images.InputStream.Read(imgBin, 0, images.ContentLength);
-                var base64Img = Convert.ToBase64String(imgBin);
-                var imageFileString = string.Format("data:image/jpg;base64,{0}", base64Img);
-
+                int i = 1; string imageFileString ="";
                 var imgList = new Dictionary<int, string>();
-                imgList.Add(1, imageFileString);
+                foreach (var image in images)
+                {
+                    var imgBin = new byte[image.ContentLength];
+                    image.InputStream.Read(imgBin, 0, image.ContentLength);
+                    var base64Img = Convert.ToBase64String(imgBin);
+                    imageFileString = string.Format("data:image/jpg;base64,{0}", base64Img);
+                    imgList.Add(i++, imageFileString);
+                }
+
+                var lastId = TroyHack.MvcApplication.AllPostings.Max(p => p.PostingId);
 
                 var posting = new PostViewModel
                 {
@@ -49,8 +54,7 @@ namespace TroyHack.Controllers
                     Characteristic = model.Characteristic,
                     Health = model.Health,
                     Images = imgList,
-                    //ImageFiles = imgList,
-                    PostingId = model.PostingId,
+                    PostingId = lastId+1,
                     SpecialNeeds = model.SpecialNeeds,
                     Status = model.Status,
                     Story = model.Story

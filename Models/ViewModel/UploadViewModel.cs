@@ -9,8 +9,6 @@ namespace TroyHack.Models.ViewModel
     {
         public UploadViewModel()
         {
-            var lastId = TroyHack.MvcApplication.AllPostings.Max(posting => posting.PostingId);
-            PostingId = lastId++;
             Images = new Dictionary<int, string>();
         }
 
