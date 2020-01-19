@@ -25,7 +25,7 @@ a:hover, a:focus {
     position: fixed;
     left: 0;
     z-index: 10;
-    background-color: cornflowerblue;
+    background-color: #497edf;
 }
 
 .icon-section img {
@@ -47,6 +47,7 @@ a:hover, a:focus {
 }
 
 .post-container {
+    background-color:#e5d87a;
     margin-top: 15px;
     border: solid 2px grey;
     border-radius: 10px;
@@ -57,8 +58,8 @@ a:hover, a:focus {
 }
 
     .img-group img {
-        max-width: 250px;
-        max-height: 300px;
+        max-width: 350px;
+        max-height: 450px;
     }
 
 .img-container {
@@ -96,4 +97,30 @@ a:hover, a:focus {
 .detail-group {
     padding: 20px;
 }
+#image {
+   border: 3px solid rgba(0,0,0, 0.4);
+   border-radius: 5px;
+}
+.all-content {
+    background-color: rgba(219, 148, 194, 0.3);
+    padding: 20px;
+    border-radius: 5px;
+    border: 3px solid rgba(239, 239, 239, 0.7);
+}
+.content-1{
+    text-align: center;
+}
+.content-2{
+    text-align: justify;
+    text-indent: 20px;
+}
+.content-3, .content-4{
+    text-indent: 30px;
+}
+.all-content p, .all-content h3, .all-content h4 {
+    filter: contrast(80%);
+}
 
+.navbar-inverse {
+    background-color: #3f2e45;
+}
